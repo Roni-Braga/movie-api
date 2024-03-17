@@ -13,7 +13,7 @@ services:
    environment:
     POSTGRES_USER: movie
     POSTGRES_PASSWORD: movie
-    POSTGRES_DB: default_database
+    POSTGRES_DB: postgres
    
 volumes:
   pgdata:  

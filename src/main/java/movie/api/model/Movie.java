@@ -1,7 +1,6 @@
 package movie.api.model;
 
-import java.util.UUID;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,9 +20,17 @@ import lombok.NoArgsConstructor;
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private String id;
     private String name;
     private String description;
     private Integer ranking;
+    @Column(name = "url")
+    private String urlImagemMovie;
 
+    public Movie(MovieDTO dados){
+        this.name = dados.name();
+        this.description = dados.description();
+        this.ranking = dados.ranking();
+        this.urlImagemMovie = dados.urlImagemMovie();
+    }
 }
