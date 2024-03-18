@@ -14,7 +14,7 @@ RUN mvn dependency:go-offline
 COPY src ./src
 
 # Executa o comando Maven para compilar e construir o projeto
-RUN mvn package
+RUN mvn clean install
 
 # Estágio 2: Configuração do ambiente de execução
 FROM openjdk:17-jdk-slim AS runtime
