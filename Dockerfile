@@ -23,7 +23,7 @@ FROM openjdk:17-jdk-slim AS runtime
 WORKDIR /api
 
 # Copia o arquivo JAR construído a partir do estágio anterior para o diretório de trabalho
-COPY --from=build /target/api-0.0.1-SNAPSHOT.jar movie.jar
+COPY --from=build api/target/api-0.0.1-SNAPSHOT.jar ./movie.jar
 
 # Expor a porta 8080 para o tráfego externo
 EXPOSE 8080
